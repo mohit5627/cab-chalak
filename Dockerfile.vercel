@@ -1,0 +1,36 @@
+FROM dunglas/frankenphp:php8.2
+
+WORKDIR /app
+
+RUN install-php-extensions \
+    pdo_mysql \
+    mbstring \
+    exif \
+    pcntl \
+    bcmath \
+    gd \
+    zip \
+    opcache
+
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+COPY . .
+
+RUN composer install --no-dev --optimize-autoloader --no-interaction
+
+RUN mkdir -p storage/framework/cache \
+    storage/framework/sessions \
+    storage/framework/views \
+    bootstrap/cache
+
+RUN chmod -R 775 storage bootstrap/cache
+
+RUN php artisan config:clear
+RUN php artisan route:clear
+RUN php artisan view:clear
+
+ENV SERVER_NAME=:8080
+
+EXPOSE 8080
+
+CMD ["frankenphp", "php-server", "--listen", ":8080", "--root", "/app/public"]
