@@ -18,136 +18,6 @@
 
 
     <div class="cc2-container cc2-hero-container">
-
-        {{-- =====================================================
-             LEFT HERO CONTENT
-        ====================================================== --}}
-
-        <div class="cc2-hero-content">
-
-            <div class="cc2-hero-eyebrow">
-
-                <span></span>
-
-                EXPLORE RAJASTHAN & BEYOND
-
-                <span></span>
-
-            </div>
-
-
-            <h1>
-                Your Journey,
-                <strong>Our Responsibility.</strong>
-            </h1>
-
-
-            <p>
-                Book comfortable cabs for local rides, outstation trips,
-                airport transfers and one-way journeys across Rajasthan.
-            </p>
-
-        </div>
-
-
-        {{-- =====================================================
-             RIGHT HERO BENEFITS
-        ====================================================== --}}
-
-        <div class="cc2-hero-benefits">
-
-            {{-- Verified Drivers --}}
-
-            <div class="cc2-hero-benefit">
-
-                <div class="cc2-benefit-round">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/>
-                        <path d="M9 12l2 2 4-4"/>
-                    </svg>
-
-                </div>
-
-                <div>
-                    <strong>Verified</strong>
-                    <span>Drivers</span>
-                </div>
-
-            </div>
-
-
-            {{-- Transparent Pricing --}}
-
-            <div class="cc2-hero-benefit">
-
-                <div class="cc2-benefit-round">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 3v18"/>
-                        <path d="M17 7.5c0-2-1.8-3.5-5-3.5S7 5.5 7 7.5s1.8 3.5 5 4.5 5 2.5 5 4.5-1.8 3.5-5 3.5-5-1.5-5-3.5"/>
-                    </svg>
-
-                </div>
-
-                <div>
-                    <strong>Transparent</strong>
-                    <span>Pricing</span>
-                </div>
-
-            </div>
-
-
-            {{-- On Time Pickup --}}
-
-            <div class="cc2-hero-benefit">
-
-                <div class="cc2-benefit-round">
-
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="8"/>
-                        <path d="M12 7v5l3 2"/>
-                    </svg>
-
-                </div>
-
-                <div>
-                    <strong>On-Time</strong>
-                    <span>Pickup</span>
-                </div>
-
-            </div>
-
-
-            {{-- Support --}}
-
-            <div class="cc2-hero-benefit">
-
-                <div class="cc2-benefit-round">
-
-                    <svg viewBox="0 0 24 24">
-                        <path d="M4 12a8 8 0 0 1 16 0"/>
-                        <path d="M4 12v4a2 2 0 0 0 2 2h1v-6H4z"/>
-                        <path d="M20 12v4a2 2 0 0 1-2 2h-1v-6h3z"/>
-                        <path d="M9 19h6"/>
-                    </svg>
-
-                </div>
-
-                <div>
-                    <strong>24×7</strong>
-                    <span>Support</span>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        {{-- =====================================================
-             BOOKING CARD
-        ====================================================== --}}
-
         <div class="cc2-booking-card">
 
             {{-- Booking Tabs + Trust --}}
@@ -243,6 +113,8 @@
                     <input
                         type="text"
                         name="pickup"
+                        id="cc2PickupLocation"
+                        class="cc2-location-input"
                         placeholder="Enter pickup location"
                         autocomplete="off"
                     >
@@ -298,7 +170,9 @@
                     <input
                         type="text"
                         name="drop"
-                        placeholder="Enter destination"
+                        id="cc2DropLocation"
+                        class="cc2-location-input"
+                        placeholder="Enter drop location"
                         autocomplete="off"
                     >
 
@@ -314,36 +188,324 @@
 
                 <div class="cc2-field cc2-date-field">
 
+                <div class="cc2-field-label">
+
                     <label>
 
                         <span class="cc2-location-icon cc2-yellow-icon">
-
-                            <svg viewBox="0 0 24 24">
-                                <rect x="4" y="5" width="16" height="15" rx="2"/>
-                                <path d="M8 3v4M16 3v4M4 10h16"/>
-                            </svg>
-
-                        </span>
+                        <svg viewBox="0 0 24 24">
+                            <rect x="4" y="5" width="16" height="15" rx="2"/>
+                            <path d="M8 3v4M16 3v4M4 10h16"/>
+                        </svg>
+                    </span>
 
                         TRAVEL DATE
 
                     </label>
 
 
-                    <input
-                        type="date"
-                        name="date"
-                        id="cc2TravelDate"
-                    >
 
+
+
+                </div>
+
+                <input
+                    type="date"
+                    name="date"
+                    id="cc2TravelDate"
+                >
+
+                <small>
+                    Select your journey date
+                </small>
+
+            </div>
+
+
+            {{-- RETURN DATE --}}
+            <div
+                class="cc2-field cc2-date-field cc2-return-date-field"
+                id="cc2ReturnDateField"
+                style="display: none;"
+            >
+
+                <div class="cc2-field-label">
+
+                    
+                    <label>
+
+                        <span class="cc2-location-icon cc2-blue-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="4" y="5" width="16" height="15" rx="2"/>
+                                <path d="M8 3v4M16 3v4M4 10h16"/>
+                            </svg>
+                        </span>
+
+
+                        RETURN DATE
+
+                    </label>
+
+                </div>
+
+                <input
+                    type="date"
+                    name="return_date"
+                    id="cc2ReturnDate"
+                >
+
+                <small>
+                    Select your return date
+                </small>
+
+            </div>
+
+                {{-- AIRPORT TRANSFER FIELDS --}}
+            <div
+                class="cc2-airport-fields"
+                id="cc2AirportFields"
+                style="display: none;"
+            >
+
+                {{-- Airport --}}
+                <div class="cc2-field">
+
+                    <label>
+                        <span class="cc2-location-icon cc2-yellow-icon">
+                            ✈
+                        </span>
+
+                        AIRPORT
+                    </label>
+
+                    <select
+                        name="airport"
+                        id="cc2Airport"
+                    >
+                        <option value="">Select Airport</option>
+                        <option value="Jaipur International Airport">
+                            Jaipur International Airport
+                        </option>
+                        <option value="Delhi Airport">
+                            Delhi Airport
+                        </option>
+                        <option value="Jodhpur Airport">
+                            Jodhpur Airport
+                        </option>
+                        <option value="Udaipur Airport">
+                            Udaipur Airport
+                        </option>
+                    </select>
 
                     <small>
-                        Select your journey date
+                        Select airport
                     </small>
 
                 </div>
 
 
+                {{-- From --}}
+                <div class="cc2-field">
+
+                    <label>
+                        <span class="cc2-location-icon cc2-blue-icon">
+                            📍
+                        </span>
+
+                        FROM (PICK-UP)
+                    </label>
+
+                    <input
+                        type="text"
+                        name="airport_from"
+                        id="cc2AirportFrom"
+                        class="cc2-location-input"
+                        placeholder="Enter pickup location"
+                        autocomplete="off"
+                    >
+
+                    <small>
+                        e.g. Hotel, Railway Station
+                    </small>
+
+                </div>
+
+
+                {{-- To --}}
+                <div class="cc2-field">
+
+                    <label>
+                        <span class="cc2-location-icon cc2-blue-icon">
+                            📍
+                        </span>
+
+                        TO (DROP-OFF)
+                    </label>
+
+                    <input
+                        type="text"
+                        name="airport_to"
+                        id="cc2AirportTo"
+                        class="cc2-location-input"
+                        placeholder="Enter drop location"
+                        autocomplete="off"
+                    >
+
+                    <small>
+                        e.g. Hotel, MG Road
+                    </small>
+
+                </div>
+
+
+                {{-- Pickup Date & Time --}}
+                <div class="cc2-field cc2-date-field">
+
+                    <div class="cc2-field-label">
+
+                        <label>
+
+                            <span class="cc2-location-icon cc2-yellow-icon">
+                                🗓
+                            </span>
+
+                            PICK-UP DATE & TIME
+
+                        </label>
+
+                    </div>
+
+                    <input
+                        type="datetime-local"
+                        name="airport_datetime"
+                        id="cc2AirportDateTime"
+                    >
+
+                    <small>
+                        Select pickup date & time
+                    </small>
+
+                </div>
+
+            </div>
+
+            {{-- HOURLY RENTAL FIELDS --}}
+                <div
+                    class="cc2-hourly-fields"
+                    id="cc2HourlyFields"
+                    style="display: none;"
+                >
+
+                    {{-- Pickup Location --}}
+                    <div class="cc2-field">
+
+                        <label>
+                            <span class="cc2-location-icon cc2-blue-icon">
+                                📍
+                            </span>
+
+                            FROM (PICK-UP)
+                        </label>
+
+                        <input
+                            type="text"
+                            name="hourly_pickup"
+                            id="cc2HourlyPickup"
+                            class="cc2-location-input"
+                            placeholder="Select Pick-up Location"
+                            autocomplete="off"
+                        >
+
+                        <small>
+                            e.g. Railway Station, Hotel, Airport
+                        </small>
+
+                    </div>
+
+
+                    {{-- Pickup Date & Time --}}
+                    <div class="cc2-field cc2-date-field">
+
+                        <div class="cc2-field-label">
+
+                            <label>
+
+                                <span class="cc2-location-icon cc2-yellow-icon">
+                                    🗓
+                                </span>
+
+                                PICK-UP DATE & TIME
+
+                            </label>
+
+                        </div>
+
+                        <input
+                            type="datetime-local"
+                            name="hourly_datetime"
+                            id="cc2HourlyDateTime"
+                        >
+
+                        <small>
+                            Select pickup date & time
+                        </small>
+
+                    </div>
+
+
+                    {{-- Rent For --}}
+                    <div class="cc2-field">
+
+                        <label>
+
+                            <span class="cc2-location-icon cc2-blue-icon">
+                                ◷
+                            </span>
+
+                            RENT FOR
+
+                        </label>
+
+                        <select
+                            name="hourly_hours"
+                            id="cc2HourlyHours"
+                        >
+
+                            <option value="">Select Hours</option>
+
+                            <option value="2">
+                                2 Hours
+                            </option>
+
+                            <option value="4">
+                                4 Hours
+                            </option>
+
+                            <option value="6">
+                                6 Hours
+                            </option>
+
+                            <option value="8">
+                                8 Hours
+                            </option>
+
+                            <option value="10">
+                                10 Hours
+                            </option>
+
+                            <option value="12">
+                                12 Hours
+                            </option>
+
+                        </select>
+
+                        <small>
+                            Choose rental duration
+                        </small>
+
+                    </div>
+
+                </div>
                 {{-- Search Button --}}
 
                 <button
@@ -373,6 +535,47 @@
             </form>
 
         </div>
+        {{-- =====================================================
+             LEFT HERO CONTENT
+        ====================================================== --}}
+
+        <div class="cc2-hero-content">
+
+            <div class="cc2-hero-eyebrow">
+
+                <span></span>
+
+                EXPLORE RAJASTHAN & BEYOND
+
+                <span></span>
+
+            </div>
+
+
+            <h1>
+                Your Journey,
+                <strong>Our Responsibility.</strong>
+            </h1>
+
+
+            <p>
+                Book comfortable cabs for local rides, outstation trips,
+                airport transfers and one-way journeys across Rajasthan.
+            </p>
+
+        </div>
+
+
+        {{-- =====================================================
+             RIGHT HERO BENEFITS
+        ====================================================== --}}
+
+        
+
+
+       
+
+        
 
     </div>
 

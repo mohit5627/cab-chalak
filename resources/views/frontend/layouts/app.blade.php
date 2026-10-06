@@ -11,12 +11,19 @@
     <title>
         @yield('title', 'Cab-Chalak | Cab Booking')
     </title>
-
+    <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}">
     <meta
         name="description"
         content="@yield('meta_description', 'Book safe, comfortable and reliable cabs with Cab-Chalak.')"
     >
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
     {{-- Main Frontend CSS --}}
     <link
         rel="stylesheet"
