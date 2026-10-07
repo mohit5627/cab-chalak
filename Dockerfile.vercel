@@ -29,8 +29,8 @@ RUN php artisan config:clear
 RUN php artisan route:clear
 RUN php artisan view:clear
 
-ENV SERVER_NAME=:8080
+ENV SERVER_NAME=:80
 
-EXPOSE 8080
+EXPOSE 80
 
-CMD ["frankenphp", "php-server", "--listen", ":8080", "--root", "/app/public"]
+CMD ["sh", "-c", "frankenphp php-server --listen :${PORT:-80} --root /app/public"]
