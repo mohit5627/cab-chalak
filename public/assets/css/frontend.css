@@ -14545,3 +14545,81 @@ body {
         overflow-y: auto !important;
     }
 }
+
+/* Mobile booking layout */
+@media (max-width: 767px) {
+    .cc2-hero-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        padding: 0 14px !important;
+        box-sizing: border-box !important;
+    }
+
+    .cc2-booking-card {
+        border-radius: 16px !important;
+        padding: 12px !important;
+    }
+
+    .cc2-booking-top {
+        gap: 10px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .cc2-booking-tabs {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 4px !important;
+        padding: 3px !important;
+        border-radius: 10px !important;
+        overflow: visible !important;
+    }
+
+    .cc2-booking-tab {
+        min-width: 0 !important;
+        min-height: 42px !important;
+        padding: 0 5px !important;
+        font-size: 12px !important;
+        white-space: normal !important;
+    }
+
+    .cc2-booking-trust-top {
+        justify-content: space-between !important;
+        gap: 8px !important;
+        white-space: normal !important;
+    }
+
+    .cc2-booking-trust-top span {
+        font-size: 11px !important;
+    }
+
+    .cc2-booking-trust-top span:last-child {
+        font-size: 9px !important;
+    }
+
+    .cc2-search-form {
+        gap: 10px !important;
+    }
+
+    .cc2-search-form .cc2-field {
+        min-height: 80px !important;
+        padding: 11px 12px !important;
+        border-radius: 12px !important;
+    }
+
+    .cc2-search-form .cc2-field input,
+    .cc2-search-form .cc2-field select {
+        min-width: 0 !important;
+        height: 26px !important;
+        font-size: 16px !important;
+    }
+
+    .cc2-search-form .cc2-search-btn {
+        min-height: 56px !important;
+        border-radius: 12px !important;
+    }
+
+    .cc2-hero-content {
+        padding-top: 32px !important;
+    }
+}

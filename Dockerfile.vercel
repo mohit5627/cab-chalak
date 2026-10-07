@@ -39,4 +39,4 @@ ENV SERVER_NAME=:80
 
 EXPOSE 80
 
-CMD ["sh", "-c", "frankenphp php-server --listen :${PORT:-80} --root /app/public"]
+CMD ["sh", "-c", "frankenphp php-server --listen :${PORT:-80} --root /app/public --workers=1"]
